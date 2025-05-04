@@ -1,7 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
 
-// SENİN FIREBASE AYARLARIN
 const firebaseConfig = {
   apiKey: "AIzaSyAFUoJNpQvgt1L-ouMvmRME6AcIB19nG2U",
   authDomain: "sozcuk-187a6.firebaseapp.com",
@@ -16,7 +15,6 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const kelimeRef = collection(db, "kelimeler");
 
-// Kelimeleri göster
 async function displayWords(filterLetters = []) {
   const list = document.getElementById("wordList");
   list.innerHTML = "";
@@ -35,14 +33,12 @@ async function displayWords(filterLetters = []) {
   });
 }
 
-// Harflerle filtrele
 function filterWords() {
   const input = document.getElementById("letterInput").value.toLowerCase().split(",");
   const letters = input.map(l => l.trim()).filter(l => l);
   displayWords(letters);
 }
 
-// Yeni kelime ekle
 async function addWord() {
   const newWord = document.getElementById("newWordInput").value.toLowerCase().trim();
   if (!newWord) return;
