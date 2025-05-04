@@ -1,0 +1,25 @@
+body {
+  background-color: white;
+  color: red;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
+}
+
+input, button {
+  padding: 10px;
+  margin: 5px;
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+button {
+  background-color: red;
+  color: white;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
